@@ -1,7 +1,13 @@
 package sinafinancespider;
 
 import java.io.IOException;
+<<<<<<< HEAD
 
+=======
+import java.io.InputStream;
+
+import org.apache.http.client.ClientProtocolException;
+>>>>>>> 590d7fc3f5e4c13e6b580d6a7bb95cab37ec485c
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
@@ -13,6 +19,7 @@ public class OpenUrl {
 	public void setRelinkCount(int relinkCount){
 		this.relinkCount=relinkCount;
 	}
+<<<<<<< HEAD
 	/**
 	 * 输入网页地址，返回的是该网页的html源码
 	 * @param url
@@ -20,6 +27,8 @@ public class OpenUrl {
 	 * @throws IOException
 	 * @throws InterruptedException 
 	 */
+=======
+>>>>>>> 590d7fc3f5e4c13e6b580d6a7bb95cab37ec485c
 	public String getPageContent(String url) throws IOException{
 		CloseableHttpClient httpclient=HttpClients.createDefault();
 		CloseableHttpResponse response=null;
@@ -32,6 +41,7 @@ public class OpenUrl {
 				hg.addHeader("Accept-Encoding","gzip,deflate");
 				hg.addHeader("Connection","keep-alive");
 				hg.addHeader("User-Agent","Mozilla/5.0 (Windows NT 10.0; WOW64; rv:45.0) Gecko/20100101 Firefox/45.0");
+<<<<<<< HEAD
 				hg.addHeader("Cookie","TrackID=1SE2a0BrIvgo4KzWxBaa60xb1bQdb0OHrXZnD3W1IiPXUtIBx4tP7rrsSVZc1CVdrODnMmchz7DR1ErEBAheiHQjuMNOTPsK80gvSqqWsJbR8YHcEc1ssQR4hA_XGlq1c; expires=Sun, 21 Feb 2021 03:24:20 GMT; path=/; domain=.jd.com;"+
 						"__jda=122270672.1160007706.1438743888.1472645663.1472647740.29; expires=Mon, 27 Feb 2017 12:55:47 GMT; path=/; domain=.jd.com;"+
 						"__jdb=122270672.3.1160007706|29.1472647740; expires=Wed, 31 Aug 2016 13:25:47 GMT; path=/; domain=.jd.com;"+
@@ -63,6 +73,11 @@ public class OpenUrl {
 					}else{
 						return result;
 					}
+=======
+				response=httpclient.execute(hg);
+				if(response.getStatusLine().getStatusCode()==200){
+					return EntityUtils.toString(response.getEntity(),"gb2312");
+>>>>>>> 590d7fc3f5e4c13e6b580d6a7bb95cab37ec485c
 				}
 			}
 			System.out.println(url+"：访问出错！");

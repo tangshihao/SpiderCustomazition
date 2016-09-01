@@ -32,6 +32,7 @@ public class SpiderCore {
 			ou.setRelinkCount(this.relinkCount);
 			String pageContent=ou.getPageContent(urls.get(i));
 			ArrayList<String> data=dp.getDataFromPage(pageContent);
+<<<<<<< HEAD
 			try{
 				totalData.addAll(data);
 			}catch(NullPointerException e){
@@ -41,6 +42,13 @@ public class SpiderCore {
 		FileWriter fw=null;
 		try{
 			fw=new FileWriter(this.file,true);
+=======
+			totalData.addAll(data);
+		}
+		FileWriter fw=null;
+		try{
+			fw=new FileWriter(this.file);
+>>>>>>> 590d7fc3f5e4c13e6b580d6a7bb95cab37ec485c
 			String line;
 			for(int i=0;i<totalData.size();i++){
 				fw.append(totalData.get(i)+"\n");
