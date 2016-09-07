@@ -10,9 +10,6 @@ import net.sf.json.JSONObject;
 import spiderinterface.DataParser;
 
 public class DataParserJsonImp implements DataParser{
-	public DataParserJsonImp(String input){
-		
-	}
 	/* 解析json格式的数据
 	 * (non-Javadoc)
 	 * @see spiderinterface.DataParser#getDataFromPage(java.lang.String)
